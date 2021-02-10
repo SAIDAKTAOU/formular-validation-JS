@@ -1,0 +1,125 @@
+
+
+<div class="container">
+<div class="jumbotron">
+<div class="row">
+  <div style="margin-left: 300px;" class="alert alert-info" role="alert">
+    Please fill out the form and verify your data then click on send
+  </div>
+</div>
+<div class="row">
+<div class="col col-lg-6">
+
+  <form name="contactForm" onsubmit="return validateForm()" method="post">
+  <div class="form-group">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+          </div>
+          <input type="text" name="name" class="form-control" placeholder="Last name" aria-label="Username" aria-describedby="basic-addon1">
+          
+      </div>
+      <div class="error" id="nameErr"></div>  
+      </div>
+    
+  <div class="form-group">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+        </div>
+        <input type="text" name="prenom" class="form-control" placeholder="First name" aria-label="prenom" aria-describedby="basic-addon1">
+        
+    </div>
+    <div class="error" id="prenomErr"></div>  
+</div>
+
+  <div class="form-group">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-at"></i></span>
+          </div>
+          <input type="text" name="email" class="form-control" placeholder="E-mail" aria-label="Username" aria-describedby="basic-addon1">
+          
+      </div>
+      <div class="error" id="emailErr"></div> 
+  </div>
+  <div class="form-group">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fas fa-mobile-alt"></i></span>
+          </div>
+          <input type="tel" name="mobile" min="3" maxlength="10" minlength="3" class="form-control" placeholder="Phone number" aria-label="Username" aria-describedby="basic-addon1">
+          
+      </div>
+      <div class="error" id="mobileErr"></div>
+  </div>
+  
+
+</div>
+<div class="col col-lg-6">
+  <div class="file">
+
+  <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+      </div>
+      <div class="custom-file">
+        <input type="file" name="file1" class="custom-file-input" id="inputGroupFile01"
+          aria-describedby="inputGroupFileAddon01" >
+        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+      </div>
+    </div>
+    <div id="file-upload-filename"></div>
+
+    <div class="error" id="FileErr"></div>
+    
+    
+    <br>
+    <div class="form-group">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="far fa-flag"></i></span>
+          </div>
+          <select name="country" class="custom-select" id="inputGroupSelect01">
+              <option>Country</option>
+              <option>Morocco</option>
+              <option>Germany</option>
+              <option>Egypt</option>
+              <option>Mexico</option>
+              <option>Netherlands</option>
+          </select>
+        </div>
+        <div class="error" id="countryErr"></div>
+  </div>
+
+   
+    <div style="margin-left: 70px;" class="form-group">
+      <div
+        class="g-recaptcha"
+        data-sitekey="6LdpvDEUAAAAAMy8x0y8PS99j4BavfO2oBdVTQGZ"
+      ></div>
+    </div>
+    <div class="error" id="captchaErr"></div>
+</div>
+  </div>
+</div>
+    <br>
+    <div><br>
+<button type="submit" class="btn btn-primary" style=" margin-left: 500px;" >Send</button>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+
+
+<script>
+ document.querySelector('.custom-file-input').addEventListener('change',function(e){
+  var fileName = document.getElementById("inputGroupFile01").files[0].name;
+  var nextSibling = e.target.nextElementSibling
+  nextSibling.innerText = fileName
+})
+</script>
+
+
